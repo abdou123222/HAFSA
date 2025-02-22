@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow Pro | Modern Task Management</title>
+    
+    <!-- Meta tags for SEO and sharing -->
+    <meta name="description" content="Professional task management and study platform with focus timer, analytics, and more.">
+    <meta property="og:title" content="TaskFlow Pro">
+    <meta property="og:description" content="Professional task management and study platform">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+    <!-- App Container -->
+    <div class="app-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <img src="assets/logo.svg" alt="TaskFlow Pro" class="logo">
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#/dashboard" class="nav-item active" data-view="dashboard">
+                    <i class="fas fa-gauge-high"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#/tasks" class="nav-item" data-view="tasks">
+                    <i class="fas fa-tasks"></i>
+                    <span>Tasks</span>
+                </a>
+                <a href="#/focus" class="nav-item" data-view="focus">
+                    <i class="fas fa-clock"></i>
+                    <span>Focus Timer</span>
+                </a>
+                <a href="#/analytics" class="nav-item" data-view="analytics">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="#/calendar" class="nav-item" data-view="calendar">
+                    <i class="fas fa-calendar-days"></i>
+                    <span>Calendar</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="settingsButton" class="icon-button" aria-label="Settings">
+                    <i class="fas fa-gear"></i>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="search" id="globalSearch" placeholder="Search tasks, notes, or type / for commands" class="search-input">
+                    <kbd class="search-shortcut">⌘K</kbd>
+                </div>
+
+                <div class="top-bar-actions">
+                    <button class="btn btn-primary" id="createTaskBtn">
+                        <i class="fas fa-plus"></i>
+                        <span>New Task</span>
+                    </button>
+                    <button class="btn btn-secondary" id="startFocusBtn">
+                        <i class="fas fa-play"></i>
+                        <span>Start Focus</span>
+                    </button>
+                    <div class="user-menu">
+                        <button class="user-menu-trigger">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=John" alt="User" class="user-avatar">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dynamic Content Container -->
+            <div id="mainContainer" class="main-container">
+                <!-- Content loaded dynamically via JS -->
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar" id="rightSidebar">
+            <div class="right-sidebar-section">
+                <h3>Today's Focus</h3>
+                <div class="focus-timer">
+                    <div class="timer-display">25:00</div>
+                    <div class="timer-controls">
+                        <button class="timer-btn" id="startTimer">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <button class="timer-btn" id="pauseTimer">
+                            <i class="fas fa-pause"></i>
+                        </button>
+                        <button class="timer-btn" id="resetTimer">
+                            <i class="fas fa-rotate-left"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-sidebar-section">
+                <h3>Quick Notes</h3>
+                <div class="quick-notes">
+                    <textarea id="quickNote" placeholder="Type a quick note..." class="quick-note-input"></textarea>
+                </div>
+            </div>
+
+            <div class="right-sidebar-section">
+                <h3>Recent Activity</h3>
+                <div class="activity-feed">
+                    <!-- Activity items loaded dynamically -->
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Modal Container -->
+    <div id="modalContainer" class="modal-container"></div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/config.js"></script>
+    <script type="module" src="js/utils.js"></script>
+    <script type="module" src="js/features.js"></script>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

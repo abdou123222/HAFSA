@@ -1,0 +1,39 @@
+{
+    "name": "StudyFlow Pro",
+    "short_name": "StudyFlow",
+    "description": "Professional time management and productivity platform",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#2563eb",
+    "icons": [
+        {
+            "src": "/assets/images/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/assets/images/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Start Timer",
+            "short_name": "Timer",
+            "description": "Start a new focus session",
+            "url": "/#timer",
+            "icons": [{ "src": "/assets/images/timer-icon.png", "sizes": "192x192" }]
+        },
+        {
+            "name": "Add Task",
+            "short_name": "New Task",
+            "description": "Create a new task",
+            "url": "/#tasks/new",
+            "icons": [{ "src": "/assets/images/task-icon.png", "sizes": "192x192" }]
+        }
+    ]
+}
